@@ -20,8 +20,8 @@ public class Main {
                     System.out.println("Неверный ввод. Введите число от 0 до 11");
                     tracker.printMonth();
                     monthShow=scanner.nextInt();
-
                 }
+
                 {   monthShow=monthShow - 1;
                     tracker.printAllStep(monthShow);
                     System.out.println("Сумма шагов за месяц: " + tracker.sumStepMonth(monthShow));
