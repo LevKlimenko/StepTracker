@@ -1,17 +1,18 @@
 import java.util.Scanner;
 
 public class StepTracker {
-    int[][] stepByDay = new int[30][12];
-    Scanner scanner = new Scanner(System.in);
-    String [] monthName =  {"Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"};
-        void printMonth(){
+    private int[][] stepByDay = new int[30][12];
+    private Scanner scanner = new Scanner(System.in);
+    private String [] monthName =  {"Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"};
+
+ public   void printMonth(){
         for (int i=0; i<monthName.length;i++){
             System.out.print(i+ "-" + monthName[i]+ " ");
         }
         System.out.println();
     }
 
-    void saveStep() {
+  public  void saveStep() {
         System.out.println("За какой месяц вы хотите ввести данные?" );
         printMonth();
         int month = scanner.nextInt();
@@ -47,7 +48,7 @@ public class StepTracker {
             }
 
 
-    void printAllStep(int monthShow) {
+  public  void printAllStep(int monthShow) {
         int dayInMonth = 30;
         for (int i = 0; i < stepByDay.length - 1; i++) {
             System.out.print((i + 1) + " день: " + stepByDay[i][monthShow] + ", ");
@@ -55,7 +56,7 @@ public class StepTracker {
         System.out.println(dayInMonth + " день: " + stepByDay[dayInMonth - 1][monthShow] + ". ");
     }
 
-   int sumStepMonth(int monthShow) {
+  public int sumStepMonth(int monthShow) {
         int stepSumm=0;
        for (int[] ints : stepByDay) {
            stepSumm += ints[monthShow];
@@ -63,7 +64,7 @@ public class StepTracker {
        return stepSumm;
         }
 
-    int findMaxStep(int monthshow){
+  public  int findMaxStep(int monthshow){
         int maxStep=0;
         for (int[] ints : stepByDay) {
             if (ints[monthshow] > maxStep) {
@@ -73,7 +74,7 @@ public class StepTracker {
         return maxStep;
     }
 
-    void findStepAverage(int monthShow){
+   public void findStepAverage(int monthShow){
         int stepAverage=sumStepMonth(monthShow)/stepByDay.length;
         System.out.println("Среднее количество шагов за месяц: " + stepAverage);
          }
@@ -96,7 +97,7 @@ public class StepTracker {
 
 
 
-    int changeStepTarget(int oldStepTarget) {
+   public int changeStepTarget(int oldStepTarget) {
             if (oldStepTarget < 0) {
             System.out.println("Ошибка. Количество шагов должно быть больше или равно 0");
             System.out.println("Введите новую цель:");

@@ -21,15 +21,14 @@ public class Main {
                     tracker.printMonth();
                     monthShow=scanner.nextInt();
                 }
-
-                {   monthShow=monthShow - 1;
+                {
                     tracker.printAllStep(monthShow);
                     System.out.println("Сумма шагов за месяц: " + tracker.sumStepMonth(monthShow));
                     System.out.println("Максимальное количество шагов за месяц: " + tracker.findMaxStep(monthShow));
                     tracker.findStepAverage(monthShow);
                     convert.findDistance(tracker.sumStepMonth(monthShow));
                     convert.findEnergy(tracker.sumStepMonth(monthShow));
-                    System.out.println("Лучшая серия: " + tracker.findBestSeries(monthShow, tracker.changeStepTarget(stepTarget)) + " дня(ей).");
+                    System.out.println("Лучшая серия: " + tracker.findBestSeries(monthShow, tracker.changeStepTarget(stepTarget)) + " дня(ей)");
                 }
             } else if (userInput == 3) {
                 System.out.println("Текущая цель: " + stepTarget + " шагов.");
@@ -45,6 +44,7 @@ public class Main {
             userInput = scanner.nextInt();
         }
         System.out.println("Программа завершена");
+        scanner.close();
     }
    private static void printMenu() {
         System.out.println("Что вы хотите сделать?");
