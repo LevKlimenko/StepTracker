@@ -5,8 +5,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         printMenu();
         StepTracker tracker = new StepTracker(scanner);
-        boolean isQuit = false;
-        while(!isQuit) {
+        while(true) {
             int MENU = scanner.nextInt();
             switch (MENU) {
                 case 1:
@@ -26,10 +25,9 @@ public class Main {
                     printMenu();
                     break;
                 case 4:
-                    isQuit=true;
                     System.out.println("Программа завершена");
                     scanner.close();
-                    break;
+                    return;
                 default:
                     System.out.println("Нет такого пункта меню.");
                     printMenu();

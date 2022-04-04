@@ -5,7 +5,7 @@ public class StepTracker {
     private final Scanner scanner;
     private String [] monthName =  {"Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"};
     private int STEP_TARGET =10000;
-    StepConverter convert=new StepConverter();
+    private StepConverter convert=new StepConverter();
 
     public void printMonth(){
         for (int i=0; i<monthName.length;i++){
@@ -48,7 +48,7 @@ public class StepTracker {
                     System.out.println("Данные за день <"+ day + "> <"  + monthName[month]  + "> сохранены.");
                     System.out.println("Пройдено: " + steps + " шагов");
                     stepByDay[day - 1][month] = steps;
-                }
+                  }
             }
             }
             }
