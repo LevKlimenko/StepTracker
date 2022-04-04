@@ -1,8 +1,8 @@
 import java.util.Formatter;
 public  class StepConverter {
 
-   private double STEP_DISTANCE = 0.00075;
-   private double STEP_ENERGY = 0.05;
+   private final double STEP_DISTANCE = 0.00075;
+   private final double STEP_ENERGY = 0.05;
 
 
     public void findDistance(double distanceMax){
