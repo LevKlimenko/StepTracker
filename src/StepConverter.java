@@ -7,7 +7,7 @@ public  class StepConverter {
 
     public void findDistance(double distanceMax){
         double dist=distanceMax* STEP_DISTANCE;
-        System.out.println("Пройдено расстояние: " + String.format("%.2f",dist) + " км");//
+        System.out.println("Пройдено расстояние: " + String.format("%.2f",dist) + " км");//количество точек после запятой
         }
     public void findEnergy(double distanceMax) {
         double energy=distanceMax * STEP_ENERGY;
