@@ -6,8 +6,7 @@ public class Main {
         printMenu();
         StepTracker tracker = new StepTracker(scanner);
         while(true) {
-            int MENU = scanner.nextInt();
-            switch (MENU) {
+              switch (scanner.nextInt()) {
                 case 1:
                     tracker.saveStep();
                     System.out.println();

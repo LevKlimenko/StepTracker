@@ -4,7 +4,7 @@ public class StepTracker {
     private int[][] stepByDay = new int[30][12];
     private final Scanner scanner;
     private String [] monthName =  {"Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"};
-    private int STEP_TARGET =10000;
+    private int stepTarget =10000;
     private StepConverter convert=new StepConverter();
 
     public void printMonth(){
@@ -105,7 +105,7 @@ public class StepTracker {
             int count = 0;
             int maxSeries = 0;
             for (int[] ints : stepByDay) {
-                if (ints[monthShow] >= STEP_TARGET) {
+                if (ints[monthShow] >= stepTarget ) {
                     count++;
                     if (count > maxSeries) {
                         maxSeries = count;
@@ -119,14 +119,14 @@ public class StepTracker {
 
 
    public int changeStepTarget() {
-       System.out.println("Текущая цель: " + STEP_TARGET + " шагов.");
+       System.out.println("Текущая цель: " + stepTarget  + " шагов.");
        System.out.println("Введите новую цель:");
-       STEP_TARGET = scanner.nextInt();
-       while (STEP_TARGET < 0) {
+       stepTarget  = scanner.nextInt();
+       while (stepTarget  < 0) {
             System.out.println("Ошибка. Количество шагов должно быть больше или равно 0");
             System.out.println("Введите новую цель:");
-            STEP_TARGET = scanner.nextInt();
+           stepTarget  = scanner.nextInt();
         }
-        return STEP_TARGET;
+        return stepTarget ;
     }
 }
